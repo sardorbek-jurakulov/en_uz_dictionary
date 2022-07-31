@@ -54,11 +54,27 @@ class WordsListPage extends StatelessWidget {
             },
           );
         },
-        child: Column(
-          children: [
-            Text(wordInUzbek),
-            Text((wordInEnglish.isNotEmpty) ? wordInEnglish : "not translated"),
-          ],
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 5,
+            vertical: 10,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                wordInUzbek,
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 24,
+                ),
+              ),
+              Text((wordInEnglish.isNotEmpty)
+                  ? wordInEnglish
+                  : "not translated"),
+            ],
+          ),
         ),
       );
     }

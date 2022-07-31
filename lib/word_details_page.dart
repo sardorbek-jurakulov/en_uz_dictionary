@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:moc_dictionary/models/word_model.dart";
 
 class WordDetailsPage extends StatelessWidget {
   const WordDetailsPage({Key? key}) : super(key: key);
@@ -8,18 +9,22 @@ class WordDetailsPage extends StatelessWidget {
     final args = ModalRoute.of(context)!.settings.arguments as Map;
     // List<Map> args = [];
     // args.add(ModalRoute.of(context)!.settings.arguments as Map<String, String>);
-    // List<Word> wordDetails = [];
+    List<Word> wordDetails = [
+      Word(args["wordInUzbek"], args["wordInEnglish"],
+          args["wordDifinitionInUzbek"]),
+    ];
+    int lengthOfWordDetails = wordDetails.length;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(),
         body: ListView.builder(
-          itemCount: args.length,
+          itemCount: lengthOfWordDetails,
           itemBuilder: (BuildContext context, int index) {
             return Column(
               children: [
-                Text(args["wordInUzbek"]),
-                Text(args["wordInEnglish"]),
-                Text(args["wordDifinitionInUzbek"]),
+                Text(wordDetails[index].wordInUzbek),
+                Text(wordDetails[index].wordInEnglish),
+                Text(wordDetails[index].wordDifinitionInUzbek),
               ],
             );
           },
