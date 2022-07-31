@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         "/word_details": (context) => WordDetailsPage(),
       },
       initialRoute: "/",
-      home: WordsListPage(),
+      // home: WordsListPage(),
     );
   }
 }

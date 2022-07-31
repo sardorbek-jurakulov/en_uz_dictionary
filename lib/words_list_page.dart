@@ -9,23 +9,35 @@ class WordsListPage extends StatelessWidget {
         "bank yoki omonat banklarining biror shaxs yoki tashkilotga ma'lum miqdordagi mablag'ni berish haqida boshqa bank yoki kassaga yuborgan buyruq qog'ozi, masalan, jamg'armalar bankiga qo'yilgan pulni istalgan omonat bankidan olish uchun berilgan hujjat."),
   ];
 
-  Widget createWordItem(
-      String wordInUzbek, String wordInEnglish, String wordDifinitionInUzbek) {
-    return InkWell(
-      onTap: () {
-        // Navigator.pushNamed();
-      },
-      child: Column(
-        children: [
-          Text(wordInUzbek),
-          Text((wordInEnglish.isNotEmpty) ? wordInEnglish : "not translated"),
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
+    /**************************************************************************/
+
+    Widget createWordItem(String wordInUzbek, String wordInEnglish,
+        String wordDifinitionInUzbek) {
+      return InkWell(
+        onTap: () {
+          Navigator.pushNamed(
+            context,
+            "/word_details",
+            arguments: {
+              "wordInUzbek": wordInUzbek,
+              "wordInEnglish": wordInEnglish,
+              "wordDifinitionInUzbek": wordDifinitionInUzbek,
+            },
+          );
+        },
+        child: Column(
+          children: [
+            Text(wordInUzbek),
+            Text((wordInEnglish.isNotEmpty) ? wordInEnglish : "not translated"),
+          ],
+        ),
+      );
+    }
+
+    /**************************************************************************/
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(),
