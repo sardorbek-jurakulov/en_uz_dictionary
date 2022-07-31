@@ -1,14 +1,23 @@
 import "package:flutter/material.dart";
+import "package:moc_dictionary/models/word_model.dart";
 
 class WordsListPage extends StatelessWidget {
-  const WordsListPage({Key? key}) : super(key: key);
+  WordsListPage({Key? key}) : super(key: key);
 
-  Widget createWordItem() {
-    return Column(
-      children: [
-        Text(""),
-        Text(""),
-      ],
+  List<Word> words = [
+    Word("avans", "", "bank"),
+  ];
+
+  Widget createWordItem(
+      String wordInUzbek, String wordInEnglish, String wordDifinitionInUzbek) {
+    return InkWell(
+      onTap: () {},
+      child: Column(
+        children: [
+          Text(wordInUzbek),
+          Text((wordInEnglish.isNotEmpty) ? wordInEnglish : "not translated"),
+        ],
+      ),
     );
   }
 
@@ -18,10 +27,14 @@ class WordsListPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(),
         body: ListView.builder(
-          itemCount: 0,
+          itemCount: words.length,
           itemBuilder: (BuildContext context, int index) {
             return Column(children: [
-              createWordItem(),
+              createWordItem(
+                words[index].wordInUzbek,
+                words[index].wordInEnglish,
+                words[index].wordDifinitionInUzbek,
+              ),
               const Divider(
                 height: 5,
                 thickness: 2,
