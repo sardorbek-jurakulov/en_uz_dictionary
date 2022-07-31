@@ -56,7 +56,7 @@ class WordsListPage extends StatelessWidget {
         },
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: 5,
+            horizontal: 10,
             vertical: 10,
           ),
           child: Column(
@@ -66,13 +66,24 @@ class WordsListPage extends StatelessWidget {
               Text(
                 wordInUzbek,
                 style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 24,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 26,
                 ),
               ),
-              Text((wordInEnglish.isNotEmpty)
-                  ? wordInEnglish
-                  : "not translated"),
+              Text(
+                (wordInEnglish.isNotEmpty) ? wordInEnglish : "not translated",
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16,
+                  height: 1.7,
+                  color: (wordInEnglish.isNotEmpty)
+                      ? const Color(0xFF222222)
+                      : const Color(0xFFAAAAAA),
+                  fontStyle: (wordInEnglish.isNotEmpty)
+                      ? FontStyle.normal
+                      : FontStyle.italic,
+                ),
+              ),
             ],
           ),
         ),
@@ -87,18 +98,21 @@ class WordsListPage extends StatelessWidget {
         body: ListView.builder(
           itemCount: words.length,
           itemBuilder: (BuildContext context, int index) {
-            return Column(children: [
-              createWordItem(
-                words[index].wordInUzbek,
-                words[index].wordInEnglish,
-                words[index].wordDifinitionInUzbek,
-              ),
-              const Divider(
-                height: 5,
-                thickness: 2,
-                color: Color(0xFFCCCCCC),
-              ),
-            ]);
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                createWordItem(
+                  words[index].wordInUzbek,
+                  words[index].wordInEnglish,
+                  words[index].wordDifinitionInUzbek,
+                ),
+                const Divider(
+                  height: 5,
+                  thickness: 1,
+                  color: Color(0xFFCCCCCC),
+                ),
+              ],
+            );
           },
         ),
       ),
