@@ -8,7 +8,7 @@ class WordDetailsPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(),
-        // body: ListView.builder()
+        // body: ListVie`w.builder()`
       ),
     );
   }

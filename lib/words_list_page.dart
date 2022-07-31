@@ -12,7 +12,9 @@ class WordsListPage extends StatelessWidget {
   Widget createWordItem(
       String wordInUzbek, String wordInEnglish, String wordDifinitionInUzbek) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        // Navigator.pushNamed();
+      },
       child: Column(
         children: [
           Text(wordInUzbek),

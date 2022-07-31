@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:moc_dictionary/words_list_page.dart";
+import 'package:moc_dictionary/word_details_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +18,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      routes: {
+        "/": (context) => WordsListPage(),
+        "/word_details": (context) => WordDetailsPage(),
+      },
+      initialRoute: "/",
       home: WordsListPage(),
     );
   }
