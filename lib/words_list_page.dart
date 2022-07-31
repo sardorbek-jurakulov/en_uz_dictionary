@@ -5,7 +5,8 @@ class WordsListPage extends StatelessWidget {
   WordsListPage({Key? key}) : super(key: key);
 
   List<Word> words = [
-    Word("avans", "", "bank"),
+    Word("avans", "",
+        "bank yoki omonat banklarining biror shaxs yoki tashkilotga ma'lum miqdordagi mablag'ni berish haqida boshqa bank yoki kassaga yuborgan buyruq qog'ozi, masalan, jamg'armalar bankiga qo'yilgan pulni istalgan omonat bankidan olish uchun berilgan hujjat."),
   ];
 
   Widget createWordItem(
