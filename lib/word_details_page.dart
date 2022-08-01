@@ -20,12 +20,53 @@ class WordDetailsPage extends StatelessWidget {
         body: ListView.builder(
           itemCount: lengthOfWordDetails,
           itemBuilder: (BuildContext context, int index) {
-            return Column(
-              children: [
-                Text(wordDetails[index].wordInUzbek),
-                Text(wordDetails[index].wordInEnglish),
-                Text(wordDetails[index].wordDifinitionInUzbek),
-              ],
+            return Container(
+              margin: const EdgeInsets.symmetric(
+                vertical: 20,
+                horizontal: 15,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    wordDetails[index].wordInUzbek,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w900,
+                      color: Color(0xFF303f9d),
+                      fontSize: 34,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    (wordDetails[index].wordInEnglish.isEmpty)
+                        ? "not translated"
+                        : wordDetails[index].wordInEnglish,
+                    style: TextStyle(
+                      color: (wordDetails[index].wordInEnglish.isEmpty)
+                          ? Color(0xFFCCCCCC)
+                          : Color(0xFFfa9807),
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                      fontStyle: (wordDetails[index].wordInEnglish.isEmpty)
+                          ? FontStyle.italic
+                          : FontStyle.normal,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Text(
+                    wordDetails[index].wordDifinitionInUzbek,
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
             );
           },
         ),

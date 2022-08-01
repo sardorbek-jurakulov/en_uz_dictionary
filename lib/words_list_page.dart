@@ -8,7 +8,7 @@ class WordsListPage extends StatelessWidget {
   List<Word> words = [
     Word("avans", "", "maqsadga muvofiq ravishda oldinga siljish."),
     Word("agent", "agent",
-        "Boshqa shaxs yoki guruh nomidan ish yurituvchi shaxs."),
+        "boshqa shaxs yoki guruh nomidan ish yurituvchi shaxs."),
     Word("agentlik operatsiyalari", "agent operations",
         "agentliklar aro bo'ladigan shartnomalar, bitimlar, kelishuvlar va boshqa holatlar."),
     Word("agrar munosabatlar", "agrarian relations",
@@ -127,15 +127,17 @@ class WordsListPage extends StatelessWidget {
                 ),
               ),
               Expanded(
-                flex: 1,
+                // flex: 1,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Container(
-                        margin: EdgeInsets.only(left: 10),
-                        child: Icon(CupertinoIcons.mic_solid)),
+                        margin: const EdgeInsets.only(left: 10),
+                        child: const Icon(CupertinoIcons.mic_solid)),
                     Container(
-                      margin: EdgeInsets.only(left: 20),
-                      child: RotatedBox(
+                      margin: const EdgeInsets.only(left: 20),
+                      child: const RotatedBox(
                         quarterTurns: 1,
                         child: Icon(
                           CupertinoIcons.arrow_2_circlepath,
