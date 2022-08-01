@@ -133,8 +133,10 @@ class WordsListPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Container(
-                        margin: const EdgeInsets.only(left: 10),
-                        child: const Icon(CupertinoIcons.mic_solid)),
+                      margin: const EdgeInsets.only(left: 10),
+                      // child: const Icon(CupertinoIcons.mic_solid),
+                      child: const Icon(Icons.mic_sharp),
+                    ),
                     Container(
                       margin: const EdgeInsets.only(left: 20),
                       child: const RotatedBox(

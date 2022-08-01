@@ -70,6 +70,10 @@ class WordDetailsPage extends StatelessWidget {
             );
           },
         ),
+        floatingActionButton: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.add),
+        ),
       ),
     );
   }
