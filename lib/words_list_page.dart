@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:flutter/cupertino.dart";
 import "package:moc_dictionary/models/word_model.dart";
 
 class WordsListPage extends StatelessWidget {
@@ -56,7 +57,7 @@ class WordsListPage extends StatelessWidget {
         },
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: 10,
+            horizontal: 12,
             vertical: 10,
           ),
           child: Column(
@@ -67,7 +68,7 @@ class WordsListPage extends StatelessWidget {
                 wordInUzbek,
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
-                  fontSize: 26,
+                  fontSize: 24,
                 ),
               ),
               Text(
@@ -75,7 +76,7 @@ class WordsListPage extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontSize: 16,
-                  height: 1.7,
+                  height: 1.6,
                   color: (wordInEnglish.isNotEmpty)
                       ? const Color(0xFF222222)
                       : const Color(0xFFAAAAAA),
@@ -94,7 +95,59 @@ class WordsListPage extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: Row(
+            children: [
+              Expanded(
+                flex: 3,
+                child: Row(
+                  children: [
+                    Icon(Icons.menu),
+                    // TextField(
+                    //   decoration: InputDecoration(
+                    //     border: OutlineInputBorder(),
+                    //     labelText: "Qidiruv...",
+                    //   ),
+                    // ),
+                    Container(
+                      margin: EdgeInsets.only(
+                        left: 30,
+                      ),
+                      child: Opacity(
+                        opacity: 0.6,
+                        child: Text(
+                          "Qidiruv...",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Row(
+                  children: [
+                    Container(
+                        margin: EdgeInsets.only(left: 10),
+                        child: Icon(CupertinoIcons.mic_solid)),
+                    Container(
+                      margin: EdgeInsets.only(left: 20),
+                      child: RotatedBox(
+                        quarterTurns: 1,
+                        child: Icon(
+                          CupertinoIcons.arrow_2_circlepath,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
         body: ListView.builder(
           itemCount: words.length,
           itemBuilder: (BuildContext context, int index) {
