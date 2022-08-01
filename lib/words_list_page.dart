@@ -110,10 +110,10 @@ class WordsListPage extends StatelessWidget {
                     //   ),
                     // ),
                     Container(
-                      margin: EdgeInsets.only(
+                      margin: const EdgeInsets.only(
                         left: 30,
                       ),
-                      child: Opacity(
+                      child: const Opacity(
                         opacity: 0.6,
                         child: Text(
                           "Qidiruv...",

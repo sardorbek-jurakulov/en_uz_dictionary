@@ -34,7 +34,7 @@ class WordDetailsPage extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.w900,
                       color: Color(0xFF303f9d),
-                      fontSize: 34,
+                      fontSize: 32,
                     ),
                   ),
                   SizedBox(
@@ -48,7 +48,7 @@ class WordDetailsPage extends StatelessWidget {
                       color: (wordDetails[index].wordInEnglish.isEmpty)
                           ? Color(0xFFCCCCCC)
                           : Color(0xFFfa9807),
-                      fontSize: 22,
+                      fontSize: 20,
                       fontWeight: FontWeight.w700,
                       fontStyle: (wordDetails[index].wordInEnglish.isEmpty)
                           ? FontStyle.italic
@@ -72,8 +72,13 @@ class WordDetailsPage extends StatelessWidget {
         ),
         floatingActionButton: IconButton(
           onPressed: () {},
-          icon: Icon(Icons.add),
+          icon: const Icon(
+            Icons.volume_down,
+            color: Color(0xFF757575),
+            size: 55,
+          ),
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
       ),
     );
   }
