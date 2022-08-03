@@ -72,6 +72,7 @@ class WordDetailsPage extends StatelessWidget {
         ),
         floatingActionButton: IconButton(
           onPressed: () {},
+          padding: const EdgeInsets.only(top: 40, right: 20),
           icon: const Icon(
             Icons.volume_down,
             color: Color(0xFF757575),
